@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
-  get "user/new"
-  resources :users
+
+  get '/' => 'pages#index'
+
+
 end
