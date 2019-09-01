@@ -1,0 +1,11 @@
+<h1>自慢一覧</h1>
+<% @posts.each do |post| %>
+  <div>
+    <h2><%= post.user.name %></h2>
+      <%= post.content %>
+      
+      <% if post.image.url %>
+        <%= image_tag post.image.url %>
+      <% end %>
+  </div>
+<% end %>
