@@ -1,12 +1,11 @@
-<header>
+<div class="header">
   <div class="container">
     <%= link_to "ジモトーク", '/' %>
     <nav>
       <ul>
         <% if logged_in? %>
        　　<li><%= link_to "自慢する", '#' %></li>
-          <li><%= link_to "ユーザー名", '#' %></li>
-          <li><%= link_to "投稿一覧", '#' %></li>
+          <li><%= link_to "マイページ", '#' %></li>
           <li><%= link_to "友達一覧", '#' %></li>
           <li><%= link_to 'ログアウト', logout_path, method: :delete %></li>
         <% else %>
@@ -17,4 +16,4 @@
     　</ul>
     </nav>
   </div>
-</header>
+</div>
