@@ -1,9 +1,8 @@
-class Post < ApplicationRecord
+class Comment < ApplicationRecord
   validates :user_id, presence: true
   validates :content, presence: true
+  validates :post_id, presence: true
   
   belongs_to :user
-  has_many :comments
-  
-  mount_uploader :image, ImageUploader
+  belongs_to :post
 end

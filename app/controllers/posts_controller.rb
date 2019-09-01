@@ -16,10 +16,7 @@ class PostsController < ApplicationController
       render :new
     end
   end
-  
-  def update
-  end
-  
+
   def destroy
   end  
   
