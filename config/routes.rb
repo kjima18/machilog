@@ -1,9 +1,7 @@
 Rails.application.routes.draw do
-
-  get 'comments/new'
-  get 'comments/create'
-  get 'comments/destroy'
   get '/' => 'pages#index'
+  get '/about' => 'pages#about'
+  
   get '/signup' => 'users#new'
 
   get    '/login' => 'sessions#new'
