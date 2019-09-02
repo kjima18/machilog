@@ -1,20 +1,22 @@
-<div class="header">
+<nav class="navbar navbar-default navbar-transparent">
   <div class="container">
-    <%= link_to "ジモトーク", '/' %>
-    <nav>
-      <ul>
-        <% if logged_in? %>
-       　　<li><%= link_to "自慢する", new_post_path  %></li>
-       　　<li><%= link_to "自慢一覧", posts_path  %></li>
-          <li><%= link_to "マイページ", '#' %></li>
-          <li><%= link_to "友達一覧", '#' %></li>
-          <li><%= link_to 'ログアウト', logout_path, method: :delete %></li>
-        <% else %>
-          <li><%= link_to "ジモトークとは", '#' %></li>
-          <li><%= link_to "新規登録", signup_path %></li>
-          <li><%= link_to "ログイン", login_path %></li>
-        <% end %>
-    　</ul>
-    </nav>
+    <% if logged_in? %>
+      <%= link_to "ジモトーク", posts_path, class: "navbar-brand"%>
+    <% else %>
+      <%= link_to "ジモトーク", '/', class: "navbar-brand" %>
+    <% end %>
+    <ul  class="nav navbar-nav navbar-right">
+      <% if logged_in? %>
+     　　<li><%= link_to "自慢する", new_post_path  %></li>
+     　　<li><%= link_to "自慢一覧", posts_path  %></li>
+        <li><%= link_to "マイページ", '#' %></li>
+        <li><%= link_to "友達一覧", '#' %></li>
+        <li><%= link_to 'ログアウト', logout_path, method: :delete %></li>
+      <% else %>
+        <li><%= link_to "ジモトークとは", '#' %></li>
+        <li><%= link_to "新規登録", signup_path %></li>
+        <li><%= link_to "ログイン", login_path %></li>
+      <% end %>
+  　</ul>
   </div>
-</div>
+</nav>

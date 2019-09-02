@@ -1,16 +1,24 @@
-<h1>自慢一覧</h1>
-<% @posts.each do |post| %>
-    <div>
-      <h2><%= post.user.name %></h2>
-      <%= post.content %>
-      <% if post.image.url %>
-        <%= image_tag post.image.url %>
-      <% end %>
-      <%= link_to "コメントする", new_post_comment_path(post_id: post.id), method: :get %>  
-    </div>
-    <div>
-      <% post.comments.each do |comment| %>
-        <%= comment.content %>
-      <% end %>
-    </div>
-<% end %>
+<div class="post-index-wrapper">
+  <div class="container">
+    <% @posts.each do |post| %>
+        <div class="row">
+          <div class="col-md-6 col-md-offset-3">
+            <div class="post-index-single">
+              <h2 class="post-author"><%= post.user.name %></h2>
+              <div class="post-content"><%= post.content %></div>
+              <% if post.image.url %>
+                <%= image_tag post.image.url %>
+              <% end %>
+              <div class="post-function">
+                <%= link_to "コメントする", new_post_comment_path(post_id: post.id), method: :get %>  
+              </div>
+              
+              <% post.comments.each do |comment| %>
+                <p class="post-text"><%= comment.content %></p>
+              <% end %>
+            </div>
+          </div>
+        </div>
+    <% end %>
+  </div>
+</div>

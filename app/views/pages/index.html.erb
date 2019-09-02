@@ -1,14 +1,14 @@
-<div>
-  <div>
+<div class="top-wrapper text-center">
+  <div class="container top-container">
     <h1>じもトーク</h1>
     <h2>あなたの住むまちを自慢しよう！</h2>
   </div>
-  <div class="row">
-    <div>
-      <%= link_to '新規登録', signup_path, class: 'btn btn-block' %>
+  <div class="row pt-3">
+    <div class="col-md-offset-3 col-md-3">
+      <%= link_to '新規登録', signup_path, class: 'btn btn-block btn-primary' %>
     </div> 
-    <div>
-      <%= link_to 'ログイン', login_path, class: 'btn btn-block' %>
+    <div class="col-md-3">
+      <%= link_to 'ログイン', login_path, class: 'btn btn-block btn-primary' %>
     </div>
   </div>
 </div>
