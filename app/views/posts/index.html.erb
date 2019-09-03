@@ -15,6 +15,7 @@
                 <li><%= link_to "コメント", new_post_comment_path(post_id: post.id), method: :get %></li>
                 <% if post.user_id == current_user.id %>
                   <li><%= link_to "削除", post_destroy_path(id: post.id), method: :delete %></li>
+                  <li><%= link_to "編集", edit_post_path(id: post.id), method: :get %></li>
                 <% end %>
               </ul>
               

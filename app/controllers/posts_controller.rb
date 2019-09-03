@@ -17,10 +17,17 @@ class PostsController < ApplicationController
     end
   end
   
-  def show
+  def edit
+    @post = Post.find_by(id: params[:id])
   end
   
-  def edit
+  def update
+    if @post = Post.update(post_params)
+      redirect_to posts_path, success: '変更を保存しました'
+    else
+      flash.now[:danger] = "保存できませんでした"   
+      render :new
+    end
   end
 
   def destroy
