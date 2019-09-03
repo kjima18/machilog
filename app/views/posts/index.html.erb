@@ -10,9 +10,13 @@
               <% if post.image.url %>
                 <%= image_tag post.image.url %>
               <% end %>
-              <div class="post-function">
-                <%= link_to "コメントする", new_post_comment_path(post_id: post.id), method: :get %>  
-              </div>
+              <ul class="list-unstyled list-inline">
+                <li><%= link_to "いいね", "#" %></li>
+                <li><%= link_to "コメント", new_post_comment_path(post_id: post.id), method: :get %></li>
+                <% if post.user_id == current_user.id %>
+                  <li><%= link_to "削除", post_destroy_path(id: post.id), method: :delete %></li>
+                <% end %>
+              </ul>
               
               <% post.comments.each do |comment| %>
                 <p class="post-text"><%= comment.content %></p>

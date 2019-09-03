@@ -16,8 +16,21 @@ class PostsController < ApplicationController
       render :new
     end
   end
+  
+  def show
+  end
+  
+  def edit
+  end
 
   def destroy
+    @post = Post.find_by(id: params[:id])
+    if @post.destroy
+      redirect_to posts_path, success: "投稿を削除しました"
+    else
+      flash.now[:danger] = "削除できませんでした" 
+      render :index
+    end
   end  
   
   private

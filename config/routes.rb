@@ -4,6 +4,8 @@ Rails.application.routes.draw do
   
   get '/signup' => 'users#new'
 
+  resources :users
+  
   get    '/login' => 'sessions#new'
   post   '/login' => 'sessions#create'
   delete '/logout'=> 'sessions#destroy'
@@ -12,7 +14,8 @@ Rails.application.routes.draw do
   post 'posts/:post_id/comments/new' => 'comments#create'
   delete 'posts/:post_id/comments/destroy' => 'comments#destroy'
   
-  resources :users
+  
+  delete 'posts/:id' => 'posts#destroy', as: :'post_destroy'
   resources :posts
   
 end
