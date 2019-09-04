@@ -18,4 +18,7 @@ Rails.application.routes.draw do
   delete 'posts/:id' => 'posts#destroy', as: :'post_destroy'
   resources :posts
   
+  post '/likes' => 'likes#create'
+  delete '/likes' => 'likes#destroy', as: :'likes_destroy'
+  
 end
