@@ -1,17 +1,19 @@
-<div>
-  <div class="container">
+<div class="comment-new-wrapper">
+  <div class="container comment-new-container">
     <div class="row">
-    　<h1 class="text-center">コメントする</h1>
-      <%= form_for @comment, url: new_post_comment_path do |f| %>
-        <div class="form-group">
-          <%= f.label :content %>
-          <%= f.text_area :content, class: 'form-control' %>
-        </div>
-          <%= f.hidden_field :post_id, :value => @comment.post_id %>
-          <% if logged_in? %>
-            <%= f.submit 'コメントする' %>
-          <% end %>
-      <% end %>
+      <div class="col-md-6 col-md-offset-3">
+      　<h1 class="text-center">コメントする</h1>
+        <%= form_for @comment, url: new_post_comment_path do |f| %>
+          <div class="form-group">
+            <%= f.label :content %>
+            <%= f.text_area :content, class: 'form-control' %>
+          </div>
+            <%= f.hidden_field :post_id, :value => @comment.post_id %>
+            <% if logged_in? %>
+              <%= f.submit 'コメントする' , class: 'btn btn-block btn-black'%>
+            <% end %>
+        <% end %>
+      </div>
     </div>
   </div>
 </div>
