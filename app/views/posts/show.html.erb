@@ -1,0 +1,29 @@
+<div class="post-show-wrapper">
+  <div class="post-index-wrapper">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-6 col-md-offset-3">
+          <div class="post-index-single">
+            <h2 class="post-author"><%= @post.user.name %></h2>
+            <div class="post-content"><%= @post.content %></div>
+            <% if @post.image.url %>
+              <%= image_tag @post.image.url %>
+            <% end %>
+            <ul class="list-unstyled list-inline">
+              <li><%= link_to "いいね", "#" %></li>
+              <li><%= link_to "コメント", new_post_comment_path(post_id: @post.id), method: :get %></li>
+              <% if @post.user_id == current_user.id %>
+                <li><%= link_to "削除", post_destroy_path(id: @post.id), method: :delete %></li>
+                <li><%= link_to "編集", edit_post_path(id: @post.id), method: :get %></li>
+              <% end %>
+            </ul>
+            
+            <% @post.comments.each do |comment| %>
+              <p class="post-text"><%= comment.content %></p>
+            <% end %>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

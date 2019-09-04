@@ -103,7 +103,7 @@ h1, h2 {
   padding-top: 50px;
   .post-index-single {
     background-color: #fffafa;
-    padding: 0px 20px 20px 20px;
+    padding: 0px 20px 00px 20px;
     margin-top: 30px;
     border: 1px solid #e6ecf0;
     border-radius: 3px;
@@ -126,6 +126,10 @@ h1, h2 {
     .post-text {
       padding-top: 20px;
     }
+    
+    .post-menu {
+      padding-top: 20px;
+    }
   }
 }
 
@@ -135,4 +139,9 @@ h1, h2 {
   .comment-new-container {
     padding-top: 120px;
   }
+}
+
+// post-show
+.post-show-wrapper {
+  height: 80vh;
 }
