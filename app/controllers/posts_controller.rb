@@ -22,7 +22,8 @@ class PostsController < ApplicationController
   end
   
   def update
-    if @post = Post.update(post_params)
+    @post = Post.find_by(id: params[:id])
+    if @post.update(post_params)
       redirect_to posts_path, success: '変更を保存しました'
     else
       flash.now[:danger] = "保存できませんでした"   
