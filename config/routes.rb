@@ -3,7 +3,6 @@ Rails.application.routes.draw do
   get '/about' => 'pages#about'
   
   get '/signup' => 'users#new'
-
   resources :users
   
   get    '/login' => 'sessions#new'
@@ -13,7 +12,6 @@ Rails.application.routes.draw do
   get 'posts/:post_id/comments/new' => 'comments#new', as: :'new_post_comment'
   post 'posts/:post_id/comments/new' => 'comments#create'
   delete 'posts/:post_id/comments/destroy' => 'comments#destroy'
-  
   
   delete 'posts/:id' => 'posts#destroy', as: :'post_destroy'
   resources :posts
