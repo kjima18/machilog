@@ -16,6 +16,7 @@ gem 'jquery-rails'
 gem 'bootsnap', '>= 1.1.0', require: false
 gem 'bcrypt'
 gem "carrierwave"
+gem 'font-awesome-sass', '~> 5.4.1'
 
 
 group :development, :test do
