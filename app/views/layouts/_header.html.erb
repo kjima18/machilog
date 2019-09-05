@@ -9,9 +9,9 @@
       <% if logged_in? %>
      　　<li><%= link_to "自慢する", new_post_path  %></li>
      　　<li><%= link_to "自慢一覧", posts_path  %></li>
-        <li><%= link_to "マイページ", '#' %></li>
         <li><%= link_to 'ユーザー一覧', users_path %></li>
         <li><%= link_to "友達一覧", '#' %></li>
+        <li><%= link_to current_user.name, user_path(:id, current_user.id) %></li>
         <li><%= link_to 'ログアウト', logout_path, method: :delete %></li>
       <% else %>
         <li><%= link_to "ジモトークとは", about_path %></li>
