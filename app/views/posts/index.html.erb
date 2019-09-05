@@ -13,23 +13,23 @@
               <% end %>
               <div class="post-menu">
                 <ul class="list-unstyled list-inline">
-                  <% if !post.like_users.include?(current_user) %>
-                    <li>
+                  <li>
+                    <% if !post.like_users.include?(current_user) %>
                       <%= link_to likes_path(post_id: post.id), method: :post do %>
                         <span class="fa fa-heart fa-lg menu-btn"></span>
                       <% end %>
-                    </li>
-                  <% else %>
-                    <li>
+                    <% else %>
                       <%= link_to likes_destroy_path(post_id: post.id), method: :delete do %>
                         <span class="fa fa-heart fa-lg unlike-btn"></span>
                       <% end %>
-                    </li>
-                  <% end %>
+                    <% end %>
+                    <%= post.like_users.count %>
+                  </li>
                   <li>
                     <%= link_to new_post_comment_path(post_id: post.id), method: :get do %>
                       <span class="fas fa-comment-alt fa-lg menu-btn"></span>
                     <% end %>
+                    <%= post.comments.count %>
                   </li>
                   <% if post.user_id == current_user.id %>
                     <li>
