@@ -1,0 +1,15 @@
+<div class="post-index-wrapper">
+  <div class="container">
+    <h1 class="text-center">ユーザー一覧</h1>
+    <% @users.each do |user| %>
+      <div class="row">
+        <div class="col-md-6 col-md-offset-3">
+          <div class="post-index-single">
+            <h2 class="post-author"><%= user.name %></h2>
+            <div class="post-content"><%= user.email %></div>
+          </div>
+        </div>
+      </div>
+    <% end %>
+  </div>
+</div>
