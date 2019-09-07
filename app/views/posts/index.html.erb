@@ -14,16 +14,9 @@
               <div class="post-menu">
                 <ul class="list-unstyled list-inline">
                   <li>
-                    <% if !post.like_users.include?(current_user) %>
-                      <%= link_to likes_path(post_id: post.id), method: :post do %>
-                        <span class="fa fa-heart fa-lg menu-btn"></span>
-                      <% end %>
-                    <% else %>
-                      <%= link_to likes_destroy_path(post_id: post.id), method: :delete do %>
-                        <span class="fa fa-heart fa-lg unlike-btn"></span>
-                      <% end %>
-                    <% end %>
-                    <%= post.like_users.count %>
+                    <div id="likes_buttons_<%= post.id %>">
+                      <%= render partial: 'likes/like', locals: {post: post} %>
+                    </div>
                   </li>
                   <li>
                     <%= link_to new_post_comment_path(post_id: post.id), method: :get do %>
@@ -66,3 +59,5 @@
     });
   });
 </script>
+
+
