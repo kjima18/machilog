@@ -1,0 +1,10 @@
+<% if !post.like_users.include?(current_user) %>
+  <%= link_to likes_path(post_id: post.id), method: :post, remote: true do %>
+    <span class="fa fa-heart fa-lg menu-btn"></span>
+  <% end %>
+<% else %>
+  <%= link_to likes_destroy_path(post_id: post.id), method: :delete, remote: true do %>
+    <span class="fa fa-heart fa-lg unlike-btn"></span>
+  <% end %>
+<% end %>
+<%= post.like_users.count %>
