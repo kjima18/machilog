@@ -36,9 +36,14 @@
                 <% end %>
               </ul>
             </div>
-            <ul class="comment-area">
+            <h4 class="comment-title">コメント</h4>
+            <ul>
               <% post.comments.each do |comment| %>
-                <li class="comment"><%= comment.content %></li>
+                <div class="comment-single">
+                  <li class="comment-user"><%= current_user.name %>:</li>
+                  <li class="comment-text"><%= comment.content %></li>
+                  <li class="comment-delete"><%= link_to "削除", destroy_post_comment_path(post_id: post.id), method: :delete %></li>
+                </div>
               <% end %>
             </ul>
           </div>
@@ -60,6 +65,7 @@
       }
     });
   });
+  
 </script>
 
 

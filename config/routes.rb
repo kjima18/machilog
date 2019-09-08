@@ -11,7 +11,7 @@ Rails.application.routes.draw do
   
   get 'posts/:post_id/comments/new' => 'comments#new', as: :'new_post_comment'
   post 'posts/:post_id/comments/new' => 'comments#create'
-  delete 'posts/:post_id/comments/destroy' => 'comments#destroy'
+  delete 'posts/:post_id/comments/destroy' => 'comments#destroy', as: :'destroy_post_comment'
   
   delete 'posts/:id' => 'posts#destroy', as: :'post_destroy'
   resources :posts

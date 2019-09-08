@@ -3,6 +3,12 @@ h1, h2 {
   font-weight: 300;
 }
 
+ul {
+  list-style: none;
+  padding: 0;
+}
+
+
 // header
 .navbar-transparent {
   margin-bottom: 0px;
@@ -134,24 +140,6 @@ h1, h2 {
 }
 
 
-ul {
-  list-style: none;
-  padding: 0px;
-  li {
-    padding: 0px;
-    margin: 0 0 5px 0;
-  }
-}
-
-.comment-area {
-  border-top: 1px solid #e6ecf0;
-  .comment {
-    border-bottom: 1px solid #e6ecf0;
-    margin-top: 5px;
-  }
-}
-
-
 .menu-btn {
   color: #8899a6;
 }
@@ -159,6 +147,40 @@ ul {
 .unlike-btn {
   color: #ff2581;
 }
+
+
+// comment
+.comment-title {
+  margin: 15px 0 0 0;
+  border-bottom: 1px solid #e6ecf0;
+}
+
+.comment-single {
+  border-bottom: 1px solid #e6ecf0;
+  margin-top: 5px;
+  .comment-user {
+    display: inline-block;
+    width: 13%;
+    font-size: 14px;
+    vertical-align: top;
+  }
+  
+  .comment-text {
+    display: inline-block;
+    width: 75%;
+    font-size: 14px;
+    vertical-align: top;
+  }
+  
+  .comment-delete {
+    display: inline-block;
+    width: 5%;
+    font-size: 10px;
+    float: right;
+    vertical-align: bottom;
+  }
+}
+
 
 
 //comment_new
