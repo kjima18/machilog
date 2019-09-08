@@ -18,7 +18,6 @@ class SessionsController < ApplicationController
     redirect_to '/', info: 'ログアウトしました'
   end
   
-  
   private
     def email_params
       params.require(:session).permit(:email)

@@ -4,42 +4,44 @@
     <% @posts.each do |post| %>
       <div class="row">
         <div class="col-md-6 col-md-offset-3">
-          <%= link_to post_path(id: post.id) do %>
-            <div class="post-index-single">
-              <h2 class="post-author"><%= post.user.name %></h2>
-              <div class="post-content"><%= post.content %></div>
-              <% if post.image.url %>
-                <%= image_tag post.image.url %>
-              <% end %>
-              <div class="post-menu">
-                <ul class="list-unstyled list-inline">
-                  <li>
-                    <div id="likes_buttons_<%= post.id %>">
-                      <%= render partial: 'likes/like', locals: {post: post} %>
-                    </div>
-                  </li>
-                  <li>
-                    <%= link_to new_post_comment_path(post_id: post.id), method: :get do %>
-                      <span class="fas fa-comment-alt fa-lg menu-btn"></span>
-                    <% end %>
-                    <%= post.comments.count %>
-                  </li>
-                  <% if post.user_id == current_user.id %>
-                    <li>
-                      <%= link_to post_destroy_path(id: post.id), method: :delete do %>
-                        <span class="fas fa-trash-alt fa-lg menu-btn"></span>
-                      <% end %>
-                    </li>
-                    <li>
-                      <%= link_to edit_post_path(id: post.id), method: :get do %>
-                        <span class="fas fa-pen fa-lg menu-btn"></span>
-                      <% end %>
-                    </li>
+          <div class="post-index-single">
+            <h2 class="post-author"><%= post.user.name %></h2>
+            <div class="post-content"><%= post.content %></div>
+            <% if post.image.url %>
+              <%= image_tag post.image.url %>
+            <% end %>
+            <div class="post-menu">
+              <ul class="list-unstyled list-inline">
+                <li>
+                  <div id="likes_buttons_<%= post.id %>">
+                    <%= render partial: 'likes/like', locals: {post: post} %>
+                  </div>
+                </li>
+                <li>
+                  <%= link_to new_post_comment_path(post_id: post.id), method: :get do %>
+                    <span class="fas fa-comment-alt fa-lg menu-btn"></span>
                   <% end %>
-                </ul>
-              </div>
+                </li>
+                <% if post.user_id == current_user.id %>
+                  <li>
+                    <%= link_to post_destroy_path(id: post.id), method: :delete do %>
+                      <span class="fas fa-trash-alt fa-lg menu-btn"></span>
+                    <% end %>
+                  </li>
+                  <li>
+                    <%= link_to edit_post_path(id: post.id), method: :get do %>
+                      <span class="fas fa-pen fa-lg menu-btn"></span>
+                    <% end %>
+                  </li>
+                <% end %>
+              </ul>
             </div>
-          <% end %>
+            <ul class="comment-area">
+              <% post.comments.each do |comment| %>
+                <li class="comment"><%= comment.content %></li>
+              <% end %>
+            </ul>
+          </div>
         </div>
       </div>
     <% end %>
