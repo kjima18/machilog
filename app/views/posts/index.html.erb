@@ -37,7 +37,9 @@
               </ul>
             </div>
             <div>
-              <h4 class="comment-title">コメント</h4>
+              <% if post.comments.present? %>
+                <h4 class="comment-title">コメント</h4>
+              <% end %>
               <ul>
                 <% post.comments.each do |comment| %>
                   <div class="comment-single">
