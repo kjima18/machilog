@@ -1,7 +1,7 @@
 CarrierWave.configure do |config|
   config.fog_provider = 'fog/aws'
   # config.storage =:fog
-    config.fog_directory  = 'machilog-photo'
+    config.fog_directory  = 'machilog-kojima'
 
     config.fog_credentials = {
     provider: 'AWS',
