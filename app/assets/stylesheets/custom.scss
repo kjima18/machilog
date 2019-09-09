@@ -8,6 +8,10 @@ ul {
   padding: 0;
 }
 
+.text-white {
+  color: #fff;
+}
+
 
 // header
 .navbar-transparent {
@@ -44,9 +48,15 @@ ul {
   text-align: center;
 }
 
-// top-page
+
 .top-wrapper {
-  height: 80vh;
+  width: 100vw;
+  height: 100vh;
+  background-image: url('bg-top2.jpg');
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
   .top-container{
     padding-top: 200px;
     h1 {
@@ -58,6 +68,7 @@ ul {
     }
   }
 }
+
 
 .btn-primary{
   margin-top: 20px;
@@ -74,12 +85,8 @@ ul {
   height: 45px;
 }
 
-.users-new-wrapper {
-  height: 80vh;
-  .users-new-container {
-    padding-top: 120px;
-  }
-}
+
+
 
 .btn-black {
   color: #565656;

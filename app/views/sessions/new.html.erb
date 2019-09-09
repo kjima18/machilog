@@ -1,18 +1,18 @@
-<div class="users-new-wrapper">
-  <div class="container">
+<div class="top-wrapper">
+  <div class="container top-container">
     <div class="row">
       <div class="col-md-offset-4 col-md-4 users-new-container">
-        <h1 class="text-center">ログイン</h1>
+        <h1 class="text-center text-white">ログイン</h1>
           <%= form_for :session, url: login_path do |f| %>
-            <div class="form-group">
+            <div class="form-group text-white">
               <%= f.label :email %>
               <%= f.text_field :email, class: 'form-control' %>
             </div>
-            <div class="form-group">
+            <div class="form-group text-white">
               <%= f.label :password %>
               <%= f.password_field :password, class: "form-control" %>
             </div>
-            <%= f.submit "ログイン", class: 'btn-block btn-black' %>
+            <%= f.submit "ログイン", class: 'btn-block btn-black text-white' %>
           <% end %>
         </div>
       </div>
