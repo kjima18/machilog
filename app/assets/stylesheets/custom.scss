@@ -69,7 +69,7 @@ ul {
   }
 }
 
-
+//button
 .btn-primary{
   margin-top: 20px;
   margin-bottom: 15px;
@@ -79,6 +79,12 @@ ul {
   }
 }
 
+.btn-danger {
+  margin-top: 20px;
+  margin-bottom: 15px;
+  font-size: 20px;
+}
+
 
 //signin,login
 .form-control {
@@ -86,20 +92,6 @@ ul {
 }
 
 
-
-
-.btn-black {
-  color: #565656;
-  border: 1px solid #565656;
-  padding-top: 10px;
-  padding-bottom: 10px;
-  margin-top: 35px;
-  font-size: 20px;
-  background-color: rgba(0,0,0,0.0);
-  &:hover {
-    color: #565656;
-  }
-}
 
 
 //post_new
