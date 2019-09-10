@@ -43,9 +43,11 @@
               <ul>
                 <% post.comments.each do |comment| %>
                   <div class="comment-single">
-                    <li class="comment-user"><%= current_user.name %>:</li>
+                    <li class="comment-user"><%= comment.user.name %>:</li>
                     <li class="comment-text"><%= comment.content %></li>
-                    <li class="comment-delete"><%= link_to "削除", destroy_post_comment_path(post_id: post.id), method: :delete %></li>
+                    <% if comment.user == current_user %>
+                      <li class="comment-delete"><%= link_to "削除", destroy_post_comment_path(post_id: post.id), method: :delete %></li>
+                    <% end %>
                   </div>
                 <% end %>
               </ul>
