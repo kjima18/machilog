@@ -1,2 +1,1 @@
-<%= label :post, :city_id %>
 <%= collection_select :post, :city_id, City.where(prefecture_id: prefecture_id), :id, :name %>

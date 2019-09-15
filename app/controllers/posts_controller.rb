@@ -20,9 +20,9 @@ class PostsController < ApplicationController
   def create
     @post = current_user.posts.new(post_params)
     if @post.save
-      redirect_to posts_path, success: '自慢しました'
+      redirect_to posts_path, success: '投稿しました'
     else
-      flash.now[:danger] = "自慢できませんでした"   
+      flash.now[:danger] = "投稿できませんでした"   
       render :new
     end
   end
@@ -53,7 +53,7 @@ class PostsController < ApplicationController
   
   private
    def post_params
-     params.require(:post).permit(:content, :image, :prefecture, :city)
+     params.require(:post).permit(:content, :image, :prefecture_id, :city_id)
    end
   
 end
