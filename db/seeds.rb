@@ -8,7 +8,6 @@ CSVROW_CITYNAME = 7
 
 savePath = ""
 
-
 open(URI.escape(DLURL)) do |file|
   ::Zip::File.open_buffer(file.read) do |zf|
     zf.each do |entry|
@@ -17,6 +16,7 @@ open(URI.escape(DLURL)) do |file|
     end
   end
 end
+
 
 CSV.foreach(savePath, encoding: "Shift_JIS:UTF-8") do |row|
   prefName = row[CSVROW_PREFNAME]

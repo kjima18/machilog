@@ -10,7 +10,11 @@ class PostsController < ApplicationController
   
   def show
     @post = Post.find_by(id: params[:id])
-    
+  end
+  
+  #Ajax処理
+  def get_cities
+    render partial: 'cities', locals: {prefecture_id: params[:prefecture_id]}
   end
   
   def create
@@ -49,7 +53,7 @@ class PostsController < ApplicationController
   
   private
    def post_params
-     params.require(:post).permit(:content, :image)
+     params.require(:post).permit(:content, :image, :prefecture, :city)
    end
   
 end

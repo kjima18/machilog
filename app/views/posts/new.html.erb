@@ -5,6 +5,13 @@
       　<h1 class="text-center">投稿作成</h1>
         <%= form_for @post do |f| %>
           <div class="form-group">
+            <%= f.label :prefecture_id %>
+            <%= f.collection_select :prefecture_id, Prefecture.all, :id, :name %>
+          </div>
+          <div class="form-group, cities-area">
+            <%= render partial: 'cities', locals: { prefecture_id: Prefecture.first.id} %>
+          </div>
+          <div class="form-group">
             <%= f.label :content %>
             <%= f.text_area :content , class: 'form-control'%>
           </div>
@@ -18,3 +25,7 @@
     </div>
   </div>
 </div>
+
+
+
+
