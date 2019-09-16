@@ -12,6 +12,11 @@ ul {
   color: #fff;
 }
 
+.text-gray {
+  color: #a9a9a9;
+}
+
+
 
 // header
 .navbar-transparent {
@@ -114,11 +119,18 @@ ul {
     border-radius: 3px;
     .post-author {
       margin-top: 5px;
+      .post-author-name{
+        font-weight: bold;
+      }
+    }
+    
+    .post-area{
+      color: #0000cd;
     }
     
     .post-content {
       font-size: 18px;
-      margin-bottom: 20px;
+      margin: 12px 0;
       width: 100%;
     }
     

@@ -1,4 +1,5 @@
 class Post < ApplicationRecord
+  mount_uploader :image, ImageUploader
   validates :user_id, presence: true
   validates :content, presence: true
   
@@ -6,6 +7,6 @@ class Post < ApplicationRecord
   has_many :comments, dependent: :destroy 
   has_many :likes, dependent: :destroy 
   has_many :like_users, through: :likes, source: 'user'
-
-  mount_uploader :image, ImageUploader
+  belongs_to :prefecture
+  belongs_to :city
 end

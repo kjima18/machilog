@@ -2,17 +2,24 @@
   <div class="container post-new-container">
     <div class="row">
       <div class="col-md-6 col-md-offset-3">
-      　<h1 class="text-center">編集する</h1>
         <%= form_for @post do |f| %>
+        　<div>
+            <h5>どのまちについて投稿しますか？</h5>
+            <div class="form-group">
+              <%= f.collection_select :prefecture_id, Prefecture.all, :id, :name %>
+            </div>
+            <div class="form-group cities-area">
+            　<%= render partial: 'cities', locals: {prefecture_id: @post.prefecture_id} %>
+            </div>
+          </div>
           <div class="form-group">
-            <%= f.label :content %>
             <%= f.text_area :content ,value: @post.content ,class: 'form-control' %>
           </div>
           <div class="form-group">
-            <%= f.label :image %>
+            <h5>写真を追加</h5>
             <%= f.file_field :image %>
           </div>
-          <%= f.submit '保存', class: 'btn btn-block btn-black' %>
+          <%= f.submit '保存', class: 'btn btn-block btn-primary' %>
         <% end %>
       </div>
     </div>
