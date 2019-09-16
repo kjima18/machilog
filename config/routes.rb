@@ -27,6 +27,4 @@ Rails.application.routes.draw do
   delete '/likes' => 'likes#destroy', as: :'likes_destroy'
   
   
-  
-  
 end

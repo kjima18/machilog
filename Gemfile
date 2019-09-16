@@ -22,6 +22,7 @@ gem 'rails-i18n', '~> 5.1'
 gem 'fog-aws'
 gem 'rename'
 gem 'seed-fu'
+gem 'ransack'
 
 
 

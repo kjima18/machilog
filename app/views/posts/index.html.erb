@@ -1,6 +1,16 @@
 <div class="post-index-wrapper">
   <div class="container">
-    <h1 class="text-center">投稿一覧</h1>
+    <div class="seach-area text-center">
+      <h5>気になるまちの投稿を探してみよう！</h5>
+      <%= search_form_for @q do |f| %>
+      　<span>
+          <%= f.collection_select :prefecture_id_eq, Prefecture.all, :id, :name, {include_blank: '都道府県を選択' } %>
+        </span>
+        <span class="form-group">
+          <%= f.submit "検索" %>
+        </span>
+      <% end %>
+    </div>
     <% @posts.each do |post| %>
       <div class="row">
         <div class="col-md-6 col-md-offset-3">
@@ -10,8 +20,10 @@
               <span class="text-gray">さんの投稿</span>
             </div>
             <div class="post-area">
-              <span><%= post.prefecture.name %></span>
-              <span><%= post.city.name %></span>
+              <% if post.prefecture.present? %>
+                <span><%= post.prefecture.name %></span>
+                <span><%= post.city.name %></span>
+              <% end %>
             </div>
             <div class="post-content"><%= post.content %></div>
             <% if post.image.url %>
@@ -78,7 +90,6 @@
       }
     });
   });
-  
 </script>
 
 

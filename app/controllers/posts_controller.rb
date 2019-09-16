@@ -1,7 +1,10 @@
 class PostsController < ApplicationController
   def index
-    @posts = Post.all
-    @posts = Post.page(params[:page]).per(5).order(created_at: :desc)
+    @q = Post.ransack(params[:q])
+    @posts = @q.result(distinct: true).page(params[:page]).per(5).order(created_at: :desc)
+    if @posts.empty?
+      flash.now[:danger] = "投稿が見つかりません" 
+    end
   end
   
   def new
@@ -12,9 +15,9 @@ class PostsController < ApplicationController
     @post = Post.find_by(id: params[:id])
   end
   
-  #Ajax処理
+  #都道府県から市町村の絞り込みAjax処理
   def get_cities
-    render partial: 'cities', locals: {prefecture_id: params[:prefecture_id]}
+    render partial: 'cities', locals: { prefecture_id: params[:prefecture_id]}
   end
   
   def create
@@ -55,5 +58,7 @@ class PostsController < ApplicationController
    def post_params
      params.require(:post).permit(:content, :image, :prefecture_id, :city_id)
    end
+   
+   
   
 end
