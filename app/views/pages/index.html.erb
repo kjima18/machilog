@@ -1,22 +1,12 @@
 <div class="top-wrapper text-center">
   <div class="container top-container">
-    <h1 class="text-white">まちログ</h1>
-    <h2 class="text-white">あなたの呟きがまちを元気にする</h2>
-  </div>
-  <div class="row">
-    <div class="col-md-offset-3 col-md-3">
-      <%= link_to '新規登録', signup_path, class: 'btn btn-block btn-primary' %>
-    </div> 
-    <div class="col-md-3">
-      <%= link_to 'ログイン', login_path, class: 'btn btn-block btn-primary' %>
-    </div>
-  </div>
-  <div class="row">
-    <div class="col-md-offset-4 col-md-4">
+    <h1>まちログ</h1>
+    <h2>あなたの呟きでまちを元気にしよう！</h2>
+    <div class="test-login">
       <%= form_for :session, url: login_path do |f|  %>
         <%= f.hidden_field :email, :value => "test@gmail.com" %>
         <%= f.hidden_field :password, :value => "test0000" %>
-        <%= f.submit 'お試しログイン' , class: 'btn btn-block btn btn-danger'%>
+        <%= f.submit 'お試しログイン' , class: 'btn btn-block btn-danger'%>
       <% end %>
     </div>
   </div>

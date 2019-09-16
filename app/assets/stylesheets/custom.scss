@@ -1,46 +1,17 @@
 
-h1, h2 {
-  font-weight: 300;
-}
-
 ul {
   list-style: none;
   padding: 0;
 }
 
+
+// font-color
 .text-white {
   color: #fff;
 }
 
 .text-gray {
   color: #a9a9a9;
-}
-
-
-
-// header
-.navbar-transparent {
-  margin-bottom: 0px;
-  background-color: #f0f8ff;
-  a {
-    color: #000000 !important;
-    margin-top: 15px;
-  }
-  .navbar-brand {
-    padding: 0px;
-    margin-top: 30px;
-    font-size: 30px;
-  }
-}
-
-// footer 
-.footer {
-  margin-top: 45px;
-  padding-top: 5px;
-  border-top: 1px solid #e6e6fa;
-  span {
-    color: #708090;
-  }
 }
 
 
@@ -53,26 +24,6 @@ ul {
   text-align: center;
 }
 
-
-.top-wrapper {
-  width: 100vw;
-  height: 100vh;
-  background-image: url('bg-top2.jpg');
-  background-position: center;
-  background-repeat: no-repeat;
-  background-attachment: fixed;
-  background-size: cover;
-  .top-container{
-    padding-top: 200px;
-    h1 {
-    font-size: 55px;
-    margin-bottom: 25px;
-    }
-    h2 {
-    margin-bottom: 60px;
-    }
-  }
-}
 
 //button
 .btn-primary{
@@ -91,12 +42,132 @@ ul {
 }
 
 
-//signin,login
+
+// header
+.navbar-transparent {
+  margin-bottom: 0px;
+  background-color: #333333;
+  height: 50px;
+  .container{
+    height: 50px;
+    a {
+      color: #ffffff !important;
+      margin-top: 0px;
+    }
+    .navbar-brand {
+      height: 50px;
+      font-size: 20px;
+      font-family: 'HiraKakuPro-W6';
+    }
+  }
+}
+
+
+// footer 
+.footer {
+  padding-top: 5px;
+  border-top: 1px solid #e6e6fa;
+  span {
+    color: #708090;
+  }
+}
+
+
+// body
+body {
+  background-color: #eeeeee;
+}
+
+
+// top,about,signin,login
+.top-wrapper {
+  width: 100vw;
+  height: 100vh;
+  background-image: url('bgtop.jpg');
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
+  .top-container{
+      padding-top: 200px;
+    h1 {
+      font-size: 55px;
+      margin-bottom: 25px;
+      font-weight: bold;
+      font-family: 'HiraKakuPro-W6';
+    }
+    h2 {
+      margin: 20px auto;
+      font-weight: bold;
+      width: 800px;
+    }
+    h3{
+      font-weight: bold;
+    }
+    .test-login {
+      padding-top: 30px;
+      .btn{
+        width: 300px;
+        margin: 20px auto;
+      }
+    }
+  }
+}
+
+
+// about
+
+.about-container{
+  padding-top: 160px;
+  h1 {
+    font-size: 55px;
+    margin-bottom: 25px;
+    font-weight: bold;
+    font-family: 'HiraKakuPro-W6';
+  }
+  h2 {
+    margin: 20px auto;
+    font-weight: bold;
+    width: 800px;
+  }
+  .about {
+    padding-top: 40px;
+  }
+  .about-title{
+    font-weight: bold;
+    font-size: 40px;
+  }
+  .about-left {
+    font-weight: bold;
+    margin-top: 15px;
+    padding-right: 30px;
+  }
+  .about-right {
+    font-weight: bold;
+    margin-top: 15px;
+    padding: 0 15px;
+  }
+}
+
+
+.about-area {
+  margin-top: 80px;
+}
+
+//signin
+
+.signin-area {
+  background-color: #ffffff;
+}
+
 .form-control {
   height: 45px;
 }
 
-
+// login
+.login-area {
+  background-color: #ffffff;
+}
 
 
 //post_new
