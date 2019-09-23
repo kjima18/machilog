@@ -1,24 +1,34 @@
-# README
+# まちの情報共有アプリ　『まちログ』
+旅好き、まち歩き好きのための情報共有アプリです。
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+- 自分が訪れたまちの情報を発信できる！
+- 地域名から投稿を検索し、気になるまちの情報を集められる！
 
-Things you may want to cover:
+本番環境：
+https://machilog.herokuapp.com/
 
-* Ruby version
+## 機能一覧
 
-* System dependencies
+- ユーザー登録機能
+- ユーザーログイン・ログアウト機能
+- 記事投稿機能（どのまちに関する情報か選択可能(Ajaxで実装)）
+- 投稿の編集機能
+- 投稿へのコメント機能
+- 投稿へのいいね機能(Ajaxで実装)
+- 投稿の検索機能（ransack）
+- 記事のページネーション機能（kaminari）
 
-* Configuration
+## 使用技術一覧
 
-* Database creation
+- Ruby 2.6.3
+- Ruby on Rails 5.2.0
+- mysql2
+- Bootstrap4
+- Heroku(https化)
+- いいね機能はAjax(jQuery)で実装
+- 都道府県、市町村選択機能はAjax(coffee script)で実装
+- 写真を投稿する際はAmazon Web ServiceのS3にアップロード
+- 検索にはransackを使用
 
-* Database initialization
 
-* How to run the test suite
 
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
