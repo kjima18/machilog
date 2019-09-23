@@ -2,11 +2,11 @@
   <div class="container top-container">
     <div class="row">
       <div class="signin-area col-md-offset-4 col-md-4">
-        <h2>Sign Up!</h2>
+        <h2 class="signin-title">Sign Up!</h2>
         <%= form_for @user do |f| %>
-        <% if @user.errors.any? %>
-          <%= render 'shered/error_messages' %>
-        <% end %>
+          <% if @user.errors.any? %>
+            <%= render 'shered/error_messages' %>
+          <% end %>
           <div class="form-group">
             名前
             <%= f.text_field :name, class: 'form-control' %>

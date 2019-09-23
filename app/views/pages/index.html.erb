@@ -2,12 +2,6 @@
   <div class="container top-container">
     <h1>まちログ</h1>
     <h2>あなたの呟きでまちを元気にしよう！</h2>
-    <div class="test-login">
-      <%= form_for :session, url: login_path do |f|  %>
-        <%= f.hidden_field :email, :value => "test@gmail.com" %>
-        <%= f.hidden_field :password, :value => "test0000" %>
-        <%= f.submit 'お試しログイン' , class: 'btn btn-block btn-danger'%>
-      <% end %>
-    </div>
+    <%= render "shered/test_login" %>
   </div>
 </div>

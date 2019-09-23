@@ -4,9 +4,6 @@
       <div class="col-md-offset-4 col-md-4 login-area">
         <h2>Login!</h2>
         <%= form_for :session, url: login_path do |f| %>
-        <% if @user.errors.any? %>
-          <%= render 'shered/error_messages' %>
-        <% end %>
           <div class="form-group">
             <h5>メールアドレス</h5>
             <%= f.text_field :email, class: 'form-control' %>
@@ -17,13 +14,7 @@
           </div>
           <%= f.submit "ログイン", class: 'btn btn-block btn-primary' %>
         <% end %>
-        <div class="test-login">
-          <%= form_for :session, url: login_path do |f|  %>
-            <%= f.hidden_field :email, :value => "test@gmail.com" %>
-            <%= f.hidden_field :password, :value => "test0000" %>
-            <%= f.submit 'お試しログイン' , class: 'btn btn-block btn-danger'%>
-          <% end %>
-        </div>
+        <%= render "shered/test_login" %>
       </div>
     </div>
   </div>
