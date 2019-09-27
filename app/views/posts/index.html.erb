@@ -33,7 +33,7 @@
               </div>
             </div>
             <div class="post-content"><%= post.content %></div>
-            <% if post.image.url %>
+            <% if post.image.url && post.image.url != "rogo.png" %>
               <%= image_tag post.image.url, class: "post-img" %>
             <% end %>
             <div class="post-menu">
