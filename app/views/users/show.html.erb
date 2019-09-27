@@ -1,10 +1,14 @@
-<div class="post-index-wrapper">
+<div class="user-show-wrapper">
   <div class="container">
     <div class="row">
       <div class="col-md-6 col-md-offset-3">
-        <div class="post-index-single">
-          <h2 class="post-author"><%= current_user.name %></h2>
-          <div class="post-content"><%= current_user.email %></div>
+        <div class="user-show text-center">
+          <div class="user-img"><%= image_tag @user.image.url %></div>
+          <h2 class="user-name"><%= @user.name %></h2>
+          <p class="user-email"><%= @user.email %></p>
+          <% if @user.id == current_user.id %>
+            <%= link_to "編集", edit_user_path(id: @user.id) %>
+          <% end %>
         </div>
       </div>
     </div>

@@ -40,7 +40,7 @@ class PostsController < ApplicationController
       redirect_to posts_path, success: '変更を保存しました'
     else
       flash.now[:danger] = "保存できませんでした"   
-      render :new
+      render :edit
     end
   end
 

@@ -18,8 +18,30 @@ class UsersController < ApplicationController
     end
   end
   
+  def show
+    @user = User.find_by(id: params[:id])
+  end
+  
+  def edit
+    @user = User.find_by(id: params[:id])
+  end
+  
+  def update
+    @user = User.find_by(id: params[:id])
+    if @user.update(user_edit_params)
+      redirect_to user_path, success: '変更を保存しました'
+    else
+      flash.now[:danger] = "変更できませんでした"   
+      render :edit
+    end
+  end
+  
   private 
    def user_params
-     params.require(:user).permit(:name, :email, :password, :password_confirmation, :prefecture_id)
+     params.require(:user).permit(:name, :email, :password, :password_confirmation, :prefecture_id, :image)
+   end
+   
+   def user_edit_params
+     params.require(:user).permit(:name, :email, :image)
    end
 end

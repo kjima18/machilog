@@ -198,6 +198,72 @@ body {
   margin: 5px 0;
 }
 
+
+//user_index
+.user-index-wrapper {
+  width: 100vw;
+  height: 90vh;
+  .user-index-single {
+    height: 100px;
+    background-color: #fffafa;
+    padding: 20px 30px;
+    margin-top: 10px;
+    border: 1px solid #e6ecf0;
+    border-radius: 3px;
+    filter: drop-shadow(2px 2px 2px rgba(0,0,0,0.6));
+    .user-img {
+      float: left;
+      width: 60px;
+      height: 60px;
+    }
+    .user-name {
+      padding: 20px 30px;
+      float: left;
+      width: 80%;
+      a {
+        color: #000000;
+        text-decoration: none;
+        font-size: 16px;
+        &:hover {
+          color: #696969;
+        }
+      }
+    }
+  }
+}
+
+//user_show
+.user-show-wrapper {
+  width: 100vw;
+  height: 90vh;
+  .user-show {
+    padding-top: 80px;
+  }
+}
+
+.user-img {
+  width: 100px;
+  height: 100px;
+  margin: 0 auto;
+  img {
+    width: 100%;
+    height: 100%;
+    border-radius: 45%;
+    box-shadow: 0 2px 6px #c1ced7;
+    object-fit: cover;
+  }
+}
+
+//user_edit
+.user-edit-wrapper {
+  width: 100vw;
+  height: 90vh;
+  .user-edit {
+    padding-top: 80px;
+  }
+}
+
+
 //post_new
 .post-new-wrapper {
   height: 80vh;
@@ -207,17 +273,27 @@ body {
   }
 }
 
-
 //post_index
 .post-index-wrapper {
   padding-top: 50px;
   .post-index-single {
     background-color: #fffafa;
-    padding: 0px 20px 0px 20px;
+    padding: 5px 20px;
     margin-top: 30px;
     border: 1px solid #e6ecf0;
     border-radius: 3px;
     filter: drop-shadow(2px 2px 2px rgba(0,0,0,0.6));
+    .post-author-img {
+      width: 40px;
+      height: 40px;
+      img {
+        width: 100%;
+        height: 100%;
+        border-radius: 45%;
+        box-shadow: 0 2px 6px #c1ced7;
+        object-fit: cover;
+      }
+    }
     .post-author {
       margin-top: 5px;
       .post-author-name{
@@ -235,10 +311,9 @@ body {
       width: 100%;
     }
     
-    img {
-      margin-top: 10px;
-      margin-bottom: 20px;
+    .post-img {
       width: 100%;
+      height: 100%;
     }
     
     .post-text {
@@ -251,6 +326,16 @@ body {
   }
 }
 
+.post-user-parent {
+  display: flex;
+}
+
+.post-user-left {
+  margin-top: 5px;
+}
+.post-user-right {
+  margin-left: 10px;
+}
 
 .menu-btn {
   color: #8899a6;
