@@ -14,6 +14,7 @@
     <% @posts.each do |post| %>
       <div class="row">
         <div class="col-md-6 col-md-offset-3">
+          
           <div class="post-index-single">
             <div class="post-user-parent">
               <div class="post-user-left post-author-img">
@@ -62,23 +63,32 @@
                 <% end %>
               </ul>
             </div>
-            <div>
-              <% if post.comments.present? %>
-                <h4 class="comment-title">コメント</h4>
-              <% end %>
-              <ul>
-                <% post.comments.each do |comment| %>
-                  <div class="comment-single">
-                    <li class="comment-user"><%= comment.user.name %>:</li>
-                    <li class="comment-text"><%= comment.content %></li>
-                    <% if comment.user == current_user %>
-                      <li class="comment-delete"><%= link_to "削除", destroy_post_comment_path(post_id: post.id), method: :delete %></li>
+          </div>  
+            
+          <% if post.comments.present? %>
+          <div class="comment-area">
+            <% post.comments.each do |comment| %>
+              <div class="comment-single">
+                <div class="comment-user">
+                  <div class="comment-user-left"><%= image_tag comment.user.image.url %></div>
+                  <div class="comment-user-right"><%= comment.user.name %></div>
+                </div>
+                <div class="comment-text-top"></div>
+                <div class="comment-text">
+                  <%= comment.content %>
+                  <% if comment.user == current_user %>
+                  <div class="comment-delete">
+                    <%= link_to destroy_post_comment_path(post_id: post.id), method: :delete do %>
+                      <span class="fas fa-trash-alt fa-sm menu-btn"></span>
                     <% end %>
                   </div>
-                <% end %>
-              </ul>
-            </div>
+                  <% end %>
+                </div>
+              </div>
+            <% end %>
           </div>
+          <% end %>
+          
         </div>
       </div>
     <% end %>

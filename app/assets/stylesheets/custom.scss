@@ -212,10 +212,10 @@ body {
     height: 100px;
     background-color: #fffafa;
     padding: 20px 30px;
-    margin-top: 10px;
+    margin-top: 30px;
     border: 1px solid #e6ecf0;
     border-radius: 3px;
-    filter: drop-shadow(2px 2px 2px rgba(0,0,0,0.6));
+    filter: drop-shadow(1px 1px 1px  rgba(0,0,0,0.3));
     .user-img {
       float: left;
       width: 60px;
@@ -287,7 +287,7 @@ body {
     margin-top: 30px;
     border: 1px solid #e6ecf0;
     border-radius: 3px;
-    filter: drop-shadow(2px 2px 2px rgba(0,0,0,0.6));
+    filter: drop-shadow(1px 1px 1px  rgba(0,0,0,0.1));
     .post-author-img {
       width: 40px;
       height: 40px;
@@ -353,40 +353,56 @@ body {
 
 // comment
 
-.comment-title {
-  margin-top: 5px;
-  padding-top: 7px;
-  border-top: 1px solid #a9a9a9;
+.comment-area {
+  background-color: #f5f5f5;
+  padding: 5px 20px;
+  border: 1px solid #e6ecf0;
+  filter: drop-shadow(1px 1px 1px  rgba(0,0,0,0.1));
+  .comment-single {
+    margin: 5px 0 10px 0;
+    padding: 3px;
+    .comment-user {
+      display: flex;
+      .comment-user-left {
+        width: 20px;
+        height: 20px;
+        float: left;
+        img {
+          width: 100%;
+          height: 100%;
+          border-radius: 45%;
+          box-shadow: 0 2px 6px #c1ced7;
+          object-fit: cover;
+        }
+      }
+      .comment-user-right{
+        margin-left: 8px;
+      }
+    }
+    .comment-text {
+      margin-top: 10px;
+      padding: 5px;
+      background-color: #ffffff;
+      .comment-delete {
+        text-align: right;
+        margin-right: 5px;
+        opacity: 0.5;
+      }
+    }
+  }
 }
 
-.comment-single {
+.comment-text-top {
+  content: '';
+  position: absolute;
+  display: block;
   margin-top: 5px;
-  padding: 3px;
-  background-color: #ffffff;
-  border: 1px solid #a9a9a9;
-  .comment-user {
-    display: inline-block;
-    width: 13%;
-    font-size: 14px;
-    vertical-align: top;
-  }
-  
-  .comment-text {
-    display: inline-block;
-    width: 77%;
-    font-size: 14px;
-    vertical-align: top;
-  }
-  
-  .comment-delete {
-    display: inline-block;
-    width: 5%;
-    font-size: 12px;
-    float: right;
-  }
+  width: 0;
+  height: 0;
+  border-right: 10px solid transparent;
+  border-bottom: 10px solid #ffffff;
+  border-left: 10px solid transparent;
 }
-
-
 
 //comment_new
 .comment-new-wrapper {
