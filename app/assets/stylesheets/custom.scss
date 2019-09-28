@@ -4,6 +4,12 @@ ul {
   padding: 0;
 }
 
+//font
+body {
+  font-family:'Hiragino Maru Gothic Pro', 'MS UI Gothic', sans-serif;
+}
+
+
 
 // font-color
 .text-white {
@@ -35,6 +41,7 @@ ul {
 
 
 
+
 //button
 .btn-primary{
   margin-top: 20px;
@@ -54,6 +61,7 @@ ul {
 
 
 // header
+
 .navbar-transparent {
   margin-bottom: 0px;
   background-color: #333333;
