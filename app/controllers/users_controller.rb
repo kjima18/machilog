@@ -1,4 +1,7 @@
 class UsersController < ApplicationController
+  before_action :authenticate_user, {only: [:index, :show, :edit, :update]}
+  before_action :forbit_login_user, {only: [:new, :create]}
+  
   def index
     @users = User.all
     @users = User.page(params[:page]).per(5).order(created_at: :desc)

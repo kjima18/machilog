@@ -1,4 +1,6 @@
 class SessionsController < ApplicationController
+  before_action :forbit_login_user, {only: [:new, :create]}
+  
   def new
   end
   
