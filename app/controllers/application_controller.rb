@@ -23,6 +23,10 @@ class ApplicationController < ActionController::Base
       redirect_to posts_path
     end
   end
+  
+  def admin_user
+    redirect_to "/" unless current_user.admin?
+  end
 
   helper_method :current_user, :logged_in?
 end

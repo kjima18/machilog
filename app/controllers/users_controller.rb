@@ -1,6 +1,7 @@
 class UsersController < ApplicationController
-  before_action :authenticate_user, {only: [:index, :show, :edit, :update]}
+  before_action :authenticate_user, {only: [:index, :show, :edit, :update, :destroy]}
   before_action :forbit_login_user, {only: [:new, :create]}
+  before_action :admin_user       , {only: :destroy}
   
   def index
     @users = User.all
@@ -36,6 +37,15 @@ class UsersController < ApplicationController
     else
       flash.now[:danger] = "変更できませんでした"   
       render :edit
+    end
+  end
+  
+  def destroy
+    if User.find_by(id: params[:id]).destroy
+      redirect_to users_path, success: "削除しました"
+    else
+      flash.now[:danger] = "削除できませんでした" 
+      render :index
     end
   end
   
