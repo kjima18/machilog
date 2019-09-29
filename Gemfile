@@ -23,6 +23,7 @@ gem 'fog-aws'
 gem 'rename'
 gem 'seed-fu'
 gem 'ransack'
+gem 'kaminari-bootstrap'
 
 
 
