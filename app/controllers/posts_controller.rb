@@ -1,7 +1,7 @@
 class PostsController < ApplicationController
   def index
     @q = Post.ransack(params[:q])
-    @posts = @q.result(distinct: true).page(params[:page]).per(5).order(created_at: :desc)
+    @posts = @q.result(distinct: true).page(params[:page]).per(5).order(created_at: :desc).includes(:like_users)
     if @posts.empty?
       flash.now[:danger] = "投稿が見つかりません" 
     end
