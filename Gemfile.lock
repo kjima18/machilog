@@ -47,6 +47,7 @@ GEM
     archive-zip (0.12.0)
       io-like (~> 0.3.0)
     arel (9.0.0)
+    ast (2.4.0)
     autoprefixer-rails (9.6.1.1)
       execjs
     bcrypt (3.1.13)
@@ -124,6 +125,7 @@ GEM
       ruby-vips (>= 2.0.13, < 3)
     io-like (0.3.0)
     ipaddress (0.8.3)
+    jaro_winkler (1.5.3)
     jbuilder (2.9.1)
       activesupport (>= 4.2.0)
     jquery-rails (4.3.5)
@@ -171,6 +173,9 @@ GEM
     nio4r (2.5.1)
     nokogiri (1.10.4)
       mini_portile2 (~> 2.4.0)
+    parallel (1.17.0)
+    parser (2.6.4.1)
+      ast (~> 2.4.0)
     pg (1.1.4)
     polyamorous (2.3.0)
       activerecord (>= 5.0)
@@ -220,6 +225,7 @@ GEM
       method_source
       rake (>= 0.8.7)
       thor (>= 0.19.0, < 2.0)
+    rainbow (3.0.0)
     rake (12.3.3)
     ransack (2.3.0)
       actionpack (>= 5.0)
@@ -252,6 +258,14 @@ GEM
       rspec-mocks (~> 3.8.0)
       rspec-support (~> 3.8.0)
     rspec-support (3.8.2)
+    rubocop (0.75.0)
+      jaro_winkler (~> 1.5.1)
+      parallel (~> 1.10)
+      parser (>= 2.6)
+      rainbow (>= 2.2.2, < 4.0)
+      ruby-progressbar (~> 1.7)
+      unicode-display_width (>= 1.4.0, < 1.7)
+    ruby-progressbar (1.10.1)
     ruby-vips (2.0.15)
       ffi (~> 1.9)
     ruby_dep (1.5.0)
@@ -296,6 +310,7 @@ GEM
       thread_safe (~> 0.1)
     uglifier (4.1.20)
       execjs (>= 0.3.0, < 3)
+    unicode-display_width (1.6.0)
     web-console (3.7.0)
       actionview (>= 5.0)
       activemodel (>= 5.0)
@@ -339,6 +354,7 @@ DEPENDENCIES
   ransack
   rename
   rspec-rails
+  rubocop
   sass-rails (~> 5.0)
   seed-fu
   selenium-webdriver

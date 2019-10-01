@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class User < ApplicationRecord
   mount_uploader :image, ImageUploader
   validates :name, presence: true, length: { maximum: 15 } 
@@ -9,9 +11,9 @@ class User < ApplicationRecord
   validates :password, presence: true, format: { with: VALID_PASSWORD_REGEX }, on: :create
   
   has_secure_password
-  
-  has_many :posts, dependent: :destroy 
-  has_many :comments, dependent: :destroy  
-  has_many :likes, dependent: :destroy 
+
+  has_many :posts, dependent: :destroy
+  has_many :comments, dependent: :destroy
+  has_many :likes, dependent: :destroy
   belongs_to :prefecture, optional: true
 end

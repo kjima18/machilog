@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class ApplicationController < ActionController::Base
   protect_from_forgery with: :exception
   add_flash_types :success, :info, :warning, :danger
@@ -9,23 +11,23 @@ class ApplicationController < ActionController::Base
   def logged_in?
     !current_user.nil?
   end
-  
+
   def authenticate_user
-    if current_user == nil
-      flash[:warning] = "ログインが必要です"
+    if current_user.nil?
+      flash[:warning] = 'ログインが必要です'
       redirect_to login_path
     end
   end
-  
+
   def forbit_login_user
     if current_user
-      flash[:warning] = "すでにログインしています"
+      flash[:warning] = 'すでにログインしています'
       redirect_to posts_path
     end
   end
-  
+
   def admin_user
-    redirect_to "/" unless current_user.admin?
+    redirect_to '/' unless current_user.admin?
   end
 
   helper_method :current_user, :logged_in?
