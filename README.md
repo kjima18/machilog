@@ -39,7 +39,7 @@ https://machilog.herokuapp.com/
 
 - RSpec によるテストの実装
 - CircleCIによる自動テスト（Github連携）
-- RuboCopCopによるコードレビュー機能の実装
+- RuboCopによるコードレビュー機能の実装
 - レスポンシブデザイン化
 - google maps APIの取得（投稿の位置情報との紐付け）
 - ユーザーフォロー機能の実装
