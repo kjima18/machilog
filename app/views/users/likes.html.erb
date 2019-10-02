@@ -18,10 +18,10 @@
           <li><%= link_to "投稿", user_path %></li>
           <li><%= link_to "いいね!", user_likes_path(id: @user.id) %></li>
         </ul>
-        <% if @user.posts.present? %>
-          <%= render "posts" %>
+        <% if @user.likes.present? %>
+          <%= render "like_posts" %>
         <% else %>
-          <h4 class="link text-center"><%= link_to "投稿してみよう！", new_post_path %></h4>
+          <h4 class="link text-center"><%= link_to "投稿を探してみよう！", posts_path %></h4>
         <% end %>
       </div>
     </div>

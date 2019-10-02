@@ -1,0 +1,33 @@
+<% @user.posts.each do |post| %>
+<div class="post-index-single user-posts-single">
+  <div class="post-user-parent">
+    <div class="post-user-left post-author-img">
+      <%= image_tag post.user.image.url %>
+    </div>
+    <div class="post-user-right">
+      <div class="post-author">
+        <span class="post-author-name"><%= post.user.name %></span>
+      </div>
+      <div class="post-area">
+        <% if post.prefecture.present? %>
+          <span><%= post.prefecture.name %></span>
+          <span><%= post.city.name %></span>
+        <% end %>
+      </div>
+    </div>
+  </div>
+  <div class="post-content"><%= post.content %></div>
+  <% if post.image.url && post.image.url != "rogo.png" %>
+    <%= image_tag post.image.url, class: "post-img" %>
+  <% end %>
+  <div class="post-menu">
+    <ul class="list-unstyled list-inline">
+      <li>
+        <div id="likes_buttons_<%= post.id %>">
+          <%= render partial: 'likes/like', locals: {post: post} %>
+        </div>
+      </li>
+    </ul>
+  </div>
+</div>
+<% end %>

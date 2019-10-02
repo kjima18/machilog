@@ -1,9 +1,12 @@
 Rails.application.routes.draw do
+  
   get '/' => 'pages#index'
   get '/about' => 'pages#about'
   
   get '/signup' => 'users#new'
+  get '/users/:id/likes' => 'users#likes', as: :'user_likes'
   resources :users
+  
   
   get    '/login' => 'sessions#new'
   post   '/login' => 'sessions#create'

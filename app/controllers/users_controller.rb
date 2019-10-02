@@ -26,6 +26,10 @@ class UsersController < ApplicationController
     @user = User.find_by(id: params[:id])
   end
   
+  def likes
+    @user = User.find_by(id: params[:id])
+  end
+  
   def edit
     @user = User.find_by(id: params[:id])
   end
