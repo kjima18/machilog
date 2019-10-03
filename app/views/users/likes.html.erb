@@ -16,7 +16,7 @@
       　<!--タブメニュー-->
         <ul class="user-tabs text-center">
           <li><%= link_to "投稿", user_path %></li>
-          <li><%= link_to "いいね!", user_likes_path(id: @user.id) %></li>
+          <li><%= link_to "いいね!", user_likes_path(id: @user.id), class: 'text-black' %></li>
         </ul>
         <% if @user.likes.present? %>
           <%= render "like_posts" %>

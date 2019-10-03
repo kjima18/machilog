@@ -104,8 +104,10 @@ body {
 
 // footer 
 .footer {
-  padding-top: 5px;
+  margin-top: 50px;
+  padding: 5px 0;
   border-top: 1px solid #e6e6fa;
+  background-color: #333333;
   span {
     color: #708090;
   }
@@ -288,7 +290,7 @@ body {
   }
 }
 
-//user-show
+
 .user-tabs {
   margin-top: 20px;
   background-color: #ffffff;
@@ -297,6 +299,14 @@ body {
     float: left;
     padding: 10px 0px;
     width: 25%;
+    a {
+      color: #d3d3d3;
+      text-decoration: none;
+      font-size: 16px;
+    }
+     .text-black {
+      color: #000000; 
+    }
   }
 }
 
@@ -304,6 +314,7 @@ body {
 .link {
   margin: 40px 0;
 }
+
 
 //user_edit
 .user-edit-wrapper {
