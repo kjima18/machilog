@@ -14,6 +14,9 @@
           <span><%= post.city.name %></span>
         <% end %>
       </div>
+      <div class="post-time text-gray">
+        <span><%= post.created_at.to_s(:datetime) %></span>
+      </div>
     </div>
   </div>
   <div class="post-content"><%= post.content %></div>

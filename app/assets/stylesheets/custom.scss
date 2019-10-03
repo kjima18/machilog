@@ -367,8 +367,15 @@ body {
     }
   }
   
-  .post-area{
+  .post-area {
     color: #0000cd;
+    float: left;
+    width: 80%;
+  }
+  
+  .post-time {
+    float: left;
+    width: 20%;
   }
   
   .post-content {
@@ -400,6 +407,7 @@ body {
 }
 .post-user-right {
   margin-left: 10px;
+  width: 100%;
 }
 
 .menu-btn {
