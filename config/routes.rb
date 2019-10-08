@@ -29,5 +29,6 @@ Rails.application.routes.draw do
   post '/likes' => 'likes#create'
   delete '/likes' => 'likes#destroy', as: :'likes_destroy'
   
+  resources :relationships, only: [:create, :destroy]
   
 end
