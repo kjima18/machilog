@@ -30,6 +30,14 @@ class UsersController < ApplicationController
     @user = User.find_by(id: params[:id])
   end
   
+  def follow
+    @user = User.find_by(id: params[:id])
+  end
+  
+  def follower
+    @user = User.find_by(id: params[:id])
+  end
+  
   def edit
     @user = User.find_by(id: params[:id])
   end

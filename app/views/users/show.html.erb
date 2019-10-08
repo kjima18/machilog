@@ -32,6 +32,8 @@
         <ul class="user-tabs text-center">
           <li><%= link_to "投稿", user_path, class: 'text-black' %></li>
           <li><%= link_to "いいね!", user_likes_path(id: @user.id) %></li>
+          <li><%= link_to "#{@user.followings.count} フォロー", user_follow_path %></li>
+          <li><%= link_to "#{@user.followers.count} フォロワー", user_follower_path %></li>
         </ul>
         <% if @user.posts.present? %>
           <%= render "posts" %>

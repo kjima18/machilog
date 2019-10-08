@@ -25,21 +25,28 @@
                 <% end %>
               <% end %>
             </div>
-          <% end %>  
+          <% end %>    
         </div>
-        
         
       　<!--タブメニュー-->
         <ul class="user-tabs text-center">
           <li><%= link_to "投稿", user_path %></li>
-          <li><%= link_to "いいね!", user_likes_path(id: @user.id), class: 'text-black' %></li>
-          <li><%= link_to "#{@user.followings.count} フォロー", user_follow_path %></li>
+          <li><%= link_to "いいね!", user_likes_path(id: @user.id) %></li>
+          <li><%= link_to "#{@user.followings.count} フォロー", user_follow_path, class: 'text-black' %></li>
           <li><%= link_to "#{@user.followers.count} フォロワー", user_follower_path %></li>
         </ul>
-        <% if @user.likes.present? %>
-          <%= render "like_posts" %>
-        <% else %>
-          <h4 class="link text-center"><%= link_to "投稿を探してみよう！", posts_path %></h4>
+        <% @user.followings.each do |user| %>
+          <div class="user-index-single">
+            <div class="user-img"><%= image_tag user.image.url %></div>
+            <div class="user-name">
+              <%= link_to user.name, user_path(id: user.id) %>
+            </div>
+            <div class="user_delete">
+              <% if current_user.admin? && current_user != user %>
+                <%= link_to "削除", user_path(id: user.id), method: :delete %>
+              <% end %>
+            </div>
+          </div>
         <% end %>
       </div>
     </div>

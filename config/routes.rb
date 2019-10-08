@@ -5,6 +5,8 @@ Rails.application.routes.draw do
   
   get '/signup' => 'users#new'
   get '/users/:id/likes' => 'users#likes', as: :'user_likes'
+  get '/users/:id/follow' => 'users#follow', as: :'user_follow'
+  get '/users/:id/follower' => 'users#follower', as: :'user_follower'
   resources :users
   
   

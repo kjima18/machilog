@@ -237,39 +237,41 @@ body {
 .user-index-wrapper {
   width: 100vw;
   height: 90vh;
-  .user-index-single {
-    height: 100px;
-    background-color: #fffafa;
+}
+
+.user-index-single {
+  height: 100px;
+  background-color: #fffafa;
+  padding: 20px 30px;
+  margin-top: 30px;
+  border: 1px solid #e6ecf0;
+  border-radius: 3px;
+  filter: drop-shadow(1px 1px 1px  rgba(0,0,0,0.3));
+  .user-img {
+    float: left;
+    width: 60px;
+    height: 60px;
+  }
+  .user-name {
     padding: 20px 30px;
-    margin-top: 30px;
-    border: 1px solid #e6ecf0;
-    border-radius: 3px;
-    filter: drop-shadow(1px 1px 1px  rgba(0,0,0,0.3));
-    .user-img {
-      float: left;
-      width: 60px;
-      height: 60px;
-    }
-    .user-name {
-      padding: 20px 30px;
-      float: left;
-      width: 75%;
-      a {
-        color: #000000;
-        text-decoration: none;
-        font-size: 16px;
-        &:hover {
-          color: #696969;
-        }
+    float: left;
+    width: 75%;
+    a {
+      color: #000000;
+      text-decoration: none;
+      font-size: 16px;
+      &:hover {
+        color: #696969;
       }
     }
-    .user_delete {
-      padding: 20px 0;
-      float: right;
-      width: 10%;
-    }
+  }
+  .user_delete {
+    padding: 20px 0;
+    float: right;
+    width: 10%;
   }
 }
+
 
 
 //user_show
