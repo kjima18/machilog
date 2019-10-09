@@ -9,11 +9,11 @@
             <div class="user-name">
               <%= link_to user.name, user_path(id: user.id) %>
             </div>
-            <div class="user_delete">
-              <% if current_user.admin? && current_user != user %>
+            <% if current_user.admin? && current_user != user %>
+              <div class="user_delete">
                 <%= link_to "削除", user_path(id: user.id), method: :delete %>
-              <% end %>
-            </div>
+              </div>
+            <% end %>
           </div>
         </div>
       </div>
