@@ -1,28 +1,18 @@
 require 'rails_helper'
 
 RSpec.describe User, type: :model do
-  it 'is not be valid without name' do
+  it '名前がなければ登録できない' do
     user = User.new(name: '')
-    expect(user).not_to be_valid
+    expect(user.valid?).to eq(false)
   end
   
-  it 'is not be valid without email' do
+  it 'メールアドレスがなければ登録できない' do
     user = User.new(email: '')
-    expect(user).not_to be_valid
+    expect(user.valid?).to eq(false)
   end
   
-  it 'is not be valid without password' do
-    user = User.new(password: '')
-    expect(user).not_to be_valid
-  end
-  
-  
-  it 'アドレスが重複している場合は無効' do
-    User.create(
-      name: "test1",
-      email: "test@example.com",
-      password: "test0000"
-    )
+  it 'メールアドレスが重複している場合は登録できない' do
+    user = FactoryGirl.create(:user)
     
     @user = User.new(
       name: "test2",
@@ -32,6 +22,11 @@ RSpec.describe User, type: :model do
     
     @user.valid?
     expect(@user.valid?).to eq(false)
+  end
+  
+  it 'パスワードがなければ登録できない' do
+    user = User.new(password: '')
+    expect(user.valid?).to eq(false)
   end
   
 end

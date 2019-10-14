@@ -96,6 +96,13 @@ GEM
     erubi (1.8.0)
     excon (0.66.0)
     execjs (2.7.0)
+    factory_girl (4.9.0)
+      activesupport (>= 3.0.0)
+    factory_girl_rails (4.9.0)
+      factory_girl (~> 4.9.0)
+      railties (>= 3.0.0)
+    faker (2.6.0)
+      i18n (>= 1.6, < 1.8)
     ffi (1.11.1)
     fog-aws (3.5.2)
       fog-core (~> 2.1)
@@ -337,6 +344,8 @@ DEPENDENCIES
   carrierwave
   chromedriver-helper
   coffee-rails (~> 4.2)
+  factory_girl_rails
+  faker
   fog-aws
   font-awesome-sass (~> 5.4.1)
   jbuilder (~> 2.5)

@@ -34,6 +34,7 @@ group :development, :test do
   gem 'pry-byebug'
   gem 'pry-stack_explorer'
   gem 'rspec-rails'
+  gem 'factory_girl_rails'
 end
 
 group :development do
@@ -49,6 +50,7 @@ group :production do
 end
 
 group :test do
+  gem 'faker'
   gem 'capybara', '>= 2.15', '< 4.0'
   gem 'selenium-webdriver'
   gem 'chromedriver-helper'
