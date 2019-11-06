@@ -1,4 +1,6 @@
 class PostsController < ApplicationController
+  before_action :post_authenticate_user, only: [:edit, :update, :destroy]
+  
   def index
     @q = Post.ransack(params[:q])
     @posts = @q.result(distinct: true).page(params[:page]).per(5).order(created_at: :desc).includes(:like_users)
@@ -52,7 +54,14 @@ class PostsController < ApplicationController
       flash.now[:danger] = "削除できませんでした" 
       render :index
     end
-  end  
+  end
+  
+  def post_authenticate_user
+    @post = Post.find_by(id: params[:id])
+    if @post.user_id != current_user.id
+      redirect_to posts_path, danger: "別ユーザーの投稿は編集できません"
+    end
+  end
   
   private
    def post_params

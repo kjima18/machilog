@@ -1,4 +1,5 @@
 class CommentsController < ApplicationController
+  
   def new
     @comment = Comment.new
     @comment.post_id = params[:post_id]
@@ -24,6 +25,7 @@ class CommentsController < ApplicationController
       render :index
     end
   end
+  
   
   private
     def comment_params
