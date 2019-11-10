@@ -48,10 +48,15 @@ class PostsController < ApplicationController
 
   def destroy
     @post = Post.find_by(id: params[:id])
-    if @post.destroy
-      redirect_to posts_path, success: "投稿を削除しました"
+    if @post.user_id == current_user.id
+      if @post.destroy
+        redirect_to posts_path, success: "投稿を削除しました"
+      else
+        flash.now[:danger] = "削除できませんでした" 
+        render :index
+      end
     else
-      flash.now[:danger] = "削除できませんでした" 
+      flash.now[:danger] = "別ユーザーの投稿は削除できません" 
       render :index
     end
   end
