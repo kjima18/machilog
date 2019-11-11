@@ -69,27 +69,7 @@
           </div>  
             
           <% if post.comments.present? %>
-          <div class="comment-area">
-            <% post.comments.each do |comment| %>
-              <div class="comment-single">
-                <div class="comment-user">
-                  <div class="comment-user-left"><%= image_tag comment.user.image.url %></div>
-                  <div class="comment-user-right"><%= comment.user.name %></div>
-                </div>
-                <div class="comment-text-top"></div>
-                <div class="comment-text">
-                  <%= comment.content %>
-                  <% if comment.user == current_user %>
-                  <div class="comment-delete">
-                    <%= link_to comment_path(id: comment.id), method: :delete do %>
-                      <span class="fas fa-trash-alt fa-sm menu-btn"></span>
-                    <% end %>
-                  </div>
-                  <% end %>
-                </div>
-              </div>
-            <% end %>
-          </div>
+            <%= render partial: "comment", locals: { post: post } %>
           <% end %>
           
         </div>
