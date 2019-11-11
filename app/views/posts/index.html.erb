@@ -81,7 +81,7 @@
                   <%= comment.content %>
                   <% if comment.user == current_user %>
                   <div class="comment-delete">
-                    <%= link_to destroy_post_comment_path(post_id: post.id), method: :delete do %>
+                    <%= link_to comment_path(id: comment.id), method: :delete do %>
                       <span class="fas fa-trash-alt fa-sm menu-btn"></span>
                     <% end %>
                   </div>

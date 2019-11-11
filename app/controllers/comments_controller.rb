@@ -19,7 +19,7 @@ class CommentsController < ApplicationController
   end
 
   def destroy
-    @comment = Comment.find_by(post_id: params[:post_id])
+    @comment = Comment.find_by(id: params[:id])
     if @comment.destroy
       redirect_to posts_path, success: 'コメントを削除しました'
     else
@@ -29,7 +29,7 @@ class CommentsController < ApplicationController
   end
   
   def comment_authenticate_user
-    @comment = Comment.find_by(post_id: params[:post_id])
+    @comment = Comment.find_by(id: params[:id])
     if @comment.user_id != current_user.id
       redirect_to posts_path, danger: "別ユーザーのコメントは削除できません"
     end
