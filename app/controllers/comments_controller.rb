@@ -1,4 +1,6 @@
 class CommentsController < ApplicationController
+  before_action :authenticate_user, {only: [:new, :create, :destroy]}
+  before_action :comment_authenticate_user, {only: :destroy}
   
   def new
     @comment = Comment.new
@@ -23,6 +25,13 @@ class CommentsController < ApplicationController
     else
       flash.now[:danger] = "コメントを削除できませんでした"
       render :index
+    end
+  end
+  
+  def comment_authenticate_user
+    @comment = Comment.find_by(post_id: params[:post_id])
+    if @comment.user_id != current_user.id
+      redirect_to posts_path, danger: "別ユーザーのコメントは削除できません"
     end
   end
   
