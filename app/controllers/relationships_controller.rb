@@ -1,4 +1,5 @@
 class RelationshipsController < ApplicationController
+  before_action :authenticate_user, {only: [:create, :destroy]}
   
   def create
     user = User.find_by(id: params[:relationship][:follow_id])
