@@ -2,6 +2,7 @@ class UsersController < ApplicationController
   before_action :authenticate_user, {only: [:index, :show, :edit, :update, :destroy]}
   before_action :forbit_login_user, {only: [:new, :create]}
   before_action :admin_user       , {only: :destroy}
+  before_action :edit_authenticate_user , {only: [:edit, :update]}
   
   def index
     @users = User.all
@@ -58,6 +59,14 @@ class UsersController < ApplicationController
     else
       flash.now[:danger] = "削除できませんでした" 
       render :index
+    end
+  end
+  
+  def edit_authenticate_user
+    @user = User.find_by(id: params[:id])
+    if @user.id != current_user.id
+      flash.now[:danger] = "別ユーザーの情報は編集できません"
+      render :show
     end
   end
   
